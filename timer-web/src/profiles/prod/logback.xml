@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<configuration debug="false">
+    <statusListener class="ch.qos.logback.core.status.NopStatusListener" >
+    </statusListener>
+
+    <property name="LOG_HOME" value="{{ service_log_path_prefix }}/{{ app }}" />
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%thread] %-5level %d{yyyy-MM-dd HH:mm:ss.SSS} %logger{5}\(%F:%L\) %X{rpc_track} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="APP_INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${LOG_HOME}/{{ app }}.log</File>
+
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>{{ logback_parttern_rpc_track }}</pattern>
+        </encoder>
+
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_HOME}/backup/{{ app }}.%d{yyyy-MM-dd}.log</FileNamePattern>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="APP_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${LOG_HOME}/{{ app }}_error.log</File>
+
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>{{ logback_parttern_rpc_track }}</pattern>
+        </encoder>
+
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_HOME}/backup/{{ app }}_log_2.%d{yyyy-MM-dd}.log</FileNamePattern>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="RPCMonitor" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${LOG_HOME}/RPCMonitor.log</File>
+
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%msg%n</pattern>
+        </encoder>
+
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>DEBUG</level>
+        </filter>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_HOME}/backup/RPCMonitor.%d{yyyy-MM-dd}.log</FileNamePattern>
+        </rollingPolicy>
+    </appender>
+    <logger name="app.rpc.monitor.logger" level="DEBUG" additivity="false" >
+        <appender-ref ref="RPCMonitor" />
+    </logger>
+    
+    <appender name="BuriedPoint" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${LOG_HOME}/BuriedPoint.log</File>
+
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%msg%n</pattern>
+        </encoder>
+
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>DEBUG</level>
+        </filter>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_HOME}/backup/BuriedPoint.%d{yyyy-MM-dd}.log</FileNamePattern>
+        </rollingPolicy>
+    </appender>
+    <logger name="app.buried.point.monitor.logger" level="DEBUG" additivity="false" >
+        <appender-ref ref="BuriedPoint" />
+    </logger>
+
+    <logger name="com.alibaba.dubbo.registry" level="ERROR" />
+    <logger name="org.apache.zookeeper.ClientCnxn" level="ERROR"/>
+    <logger name="org.springframework.kafka" level="ERROR"/>
+
+    <logger name="com.mljr.lyqc.loan.passport.LoanPassportApplication" level="INFO" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+    <ROOT level="INFO">
+        <appender-ref ref="APP_INFO" />
+        <appender-ref ref="APP_ERROR" />
+    </ROOT>
+
+</configuration>

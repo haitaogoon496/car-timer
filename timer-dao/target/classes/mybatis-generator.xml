@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+<!-- <classPathEntry location="C:\oracle\product\10.2.0\db_1\jdbc\lib\ojdbc14.jar" />-->
+<context id="DB2Tables" targetRuntime="MyBatis3">
+    <commentGenerator>
+        <property name="suppressAllComments" value="true" />
+    </commentGenerator>
+    <!-- 数据库链接URL、用户名、密码 -->
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/car-timer" userId="root" password="123456"/>
+    <javaTypeResolver>
+        <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+    <!-- 生成模型的包名和位置 -->
+    <javaModelGenerator targetPackage="com.mljr.heil.entity" targetProject="src/main/java">
+        <property name="enableSubPackages" value="true" />
+        <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+    <!-- 生成的映射文件包名和位置 -->
+    <sqlMapGenerator targetPackage="com.mljr.heil.mapper" targetProject="src/main/resources">
+        <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+    <!-- 生成DAO的包名和位置 -->
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.mljr.heil.mapper" targetProject="src/main/java">
+        <property name="enableSubPackages" value="true" />
+    </javaClientGenerator>
+
+    <!-- 要生成那些表(更改tableName和domainObjectName就可以) -->
+    <!--<table tableName="ca_gps_rule" domainObjectName="GpsRule" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+    <!--<table tableName="ca_gps_dealer" domainObjectName="GpsDealer" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+
+    <!--<table tableName="sy_dealer" domainObjectName="SyDealer" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+
+    <!--<table tableName="ca_rate_rule" domainObjectName="RateRule" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+    <!--<table tableName="ca_rate_dealer" domainObjectName="RateDealer" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+
+    <!--<table tableName="ca_yan_bao_rule" domainObjectName="YanbaoRule" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+    <!--<table tableName="ca_yan_bao_dealer" domainObjectName="YanbaoDealer" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+    <!--<table tableName="ca_yan_bao_tc" domainObjectName="YanbaoTc" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+
+    <!--<table tableName="ca_extend_safe_rule" domainObjectName="ExtendSafeRule" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+    <!--<table tableName="ca_extend_safe_dealer" domainObjectName="ExtendSafeDealer" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+    <!--<table tableName="ca_extend_safe_tc" domainObjectName="ExtendSafeTc" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+
+    <!--<table tableName="ca_ser_fin_rule" domainObjectName="SerFinRule" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+    <!--<table tableName="ca_ser_fin_rate" domainObjectName="SerFinRate" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+    <!--<table tableName="ca_ser_fin_dealer" domainObjectName="SerFinDealer" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+
+
+    <!--<table tableName="ca_account_rule" domainObjectName="AccountRule" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+    <!--<table tableName="ca_account_dealer" domainObjectName="AccountDealer" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+
+    <!--<table tableName="ca_product_type" domainObjectName="ProductType" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+    <!--<table tableName="ca_product_info" domainObjectName="ProductInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+    <!--<table tableName="ca_product_dealer" domainObjectName="ProductDealer" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+
+    <!--<table tableName="ca_product" domainObjectName="Product" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+    <!--<table tableName="ca_product_props" domainObjectName="ProductProps" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+    <!--<table tableName="ca_product_rule" domainObjectName="ProductRule" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+    <!--<table tableName="ca_rule_prop" domainObjectName="RuleProp" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+
+    <!--<table tableName="ca_product_audit" domainObjectName="ProductAudit" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+    <!--<table tableName="ca_product_rulever_prop" domainObjectName="ProductRuleverProp" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+
+    <!--<table tableName="ca_component_rule" domainObjectName="ComponentRule" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+    <!--<table tableName="ca_component_props" domainObjectName="ComponentProps" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+
+    <!--<table tableName="sy_arg_control" domainObjectName="SyArgControl" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+
+    <!--<table tableName="pd_fee_dealer" domainObjectName="PdFeeDealer" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+    <table tableName="pd_fee_rule" domainObjectName="PdFeeRule" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+    <table tableName="pd_insurance_res" domainObjectName="PdInsuranceRes" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+
+    <!--<table tableName="sy_user_operate_log" domainObjectName="UserOperateLog" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+    <!--<table tableName="sy_user_log" domainObjectName="SyUserLog" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+    <!--<table tableName="sy_user_role" domainObjectName="SyUserRole" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+    <!--<table tableName="pd_calc_log" domainObjectName="CalcLog" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+    <table tableName="pd_fund_rule_prop" domainObjectName="dsdfs" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+
+    <!--
+            <table tableName="%" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+    -->
+</context>
+</generatorConfiguration>

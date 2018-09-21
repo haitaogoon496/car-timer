@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Maven: car-timer:timer-common:1.0-SNAPSHOT">
+    <CLASSES />
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/timer-common/timer-common-1.0-SNAPSHOT-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/timer-common/timer-common-1.0-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="timer-web:war">
+    <output-path>$PROJECT_DIR$/timer-web/target</output-path>
+    <root id="archive" name="timer-web.war">
+      <element id="artifact" artifact-name="timer-web:war exploded" />
+    </root>
+  </artifact>
+</component>

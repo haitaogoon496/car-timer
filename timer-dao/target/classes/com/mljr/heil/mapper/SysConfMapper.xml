@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mljr.heil.mapper.SysConfMapper">
+  <resultMap id="BaseResultMap" type="com.mljr.heil.entity.SysConf">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="value" jdbcType="VARCHAR" property="value" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="desp" jdbcType="VARCHAR" property="desp" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, value, createTime, desp
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_sys_conf
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+
+</mapper>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Maven: car-timer:timer-dao:1.0-SNAPSHOT">
+    <CLASSES />
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/timer-dao/timer-dao-1.0-SNAPSHOT-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/timer-dao/timer-dao-1.0-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

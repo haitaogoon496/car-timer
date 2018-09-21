@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.lyqc.base:lyqc-base:1.4.4-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/lyqc/base/lyqc-base/1.4.4-SNAPSHOT/lyqc-base-1.4.4-20180703.102103-44.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/lyqc/base/lyqc-base/1.4.4-SNAPSHOT/lyqc-base-1.4.4-20180703.102103-44-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/lyqc/base/lyqc-base/1.4.4-SNAPSHOT/lyqc-base-1.4.4-20180703.102103-44-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+    <statusListener class="ch.qos.logback.core.status.NopStatusListener" >
+    </statusListener>
+
+    <property name="LOG_HOME" value="logs/loan_passport" />
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%thread] %-5level %d{yyyy-MM-dd HH:mm:ss.SSS} %logger{5}\(%F:%L\) %X{rpc_track} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="LOAN_PASSPORT_INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${LOG_HOME}/info.log</File>
+
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>[%thread] %-5level %d{yyyy-MM-dd HH:mm:ss.SSS} %logger{5}[%L] %X{rpc_track} - %msg%n</pattern>
+        </encoder>
+
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_HOME}/backup/loan_passport_info.%d{yyyy-MM-dd}.log</FileNamePattern>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="LOAN_PASSPORT_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${LOG_HOME}/error.log</File>
+
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>[%thread] %-5level %d{yyyy-MM-dd HH:mm:ss.SSS} %logger{5}[%L] %X{rpc_track} - %msg%n</pattern>
+        </encoder>
+
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_HOME}/backup/loan_passport_error.%d{yyyy-MM-dd}.log</FileNamePattern>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="LOAN_PASSPORT_TRACKER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${LOG_HOME}/debug.log</File>
+
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%msg%n</pattern>
+        </encoder>
+
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>DEBUG</level>
+        </filter>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_HOME}/backup/loan_passport_debug.%d{yyyy-MM-dd}.log</FileNamePattern>
+        </rollingPolicy>
+    </appender>
+    <logger name="app.track.logger" level="DEBUG" >
+        <appender-ref ref="LOAN_PASSPORT_TRACKER" />
+    </logger>
+
+    <logger name="com.alibaba.dubbo.registry.zookeeper.ZookeeperRegistry" level="ERROR" />
+    <logger name="com.alibaba.dubbo.registry.integration.RegistryProtocol" level="ERROR" />
+
+    <logger name="dao" level="INFO">
+        <!--daoFILE为实际定义的appender-->
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="LOAN_PASSPORT_TRACKER" />
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="LOAN_PASSPORT_INFO" />
+        <appender-ref ref="LOAN_PASSPORT_ERROR" />
+        <appender-ref ref="LOAN_PASSPORT_TRACKER" />
+    </root>
+
+</configuration>

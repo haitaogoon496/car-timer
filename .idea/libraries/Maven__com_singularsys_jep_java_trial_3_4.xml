@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.singularsys:jep-java:trial:3.4">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/singularsys/jep-java/3.4/jep-java-3.4-trial.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/singularsys/jep-java/3.4/jep-java-3.4-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/singularsys/jep-java/3.4/jep-java-3.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

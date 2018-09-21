@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/car-timer.iml" filepath="$PROJECT_DIR$/car-timer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/timer-common/timer-common.iml" filepath="$PROJECT_DIR$/timer-common/timer-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/timer-dao/timer-dao.iml" filepath="$PROJECT_DIR$/timer-dao/timer-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/timer-service/timer-service.iml" filepath="$PROJECT_DIR$/timer-service/timer-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/timer-web/timer-web.iml" filepath="$PROJECT_DIR$/timer-web/timer-web.iml" />
+    </modules>
+  </component>
+</project>
