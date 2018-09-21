@@ -17,5 +17,4 @@
     from t_sys_conf
     where id = #{id,jdbcType=BIGINT}
   </select>
-
 </mapper>
